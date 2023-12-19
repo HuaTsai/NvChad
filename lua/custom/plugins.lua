@@ -32,16 +32,33 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function(_, _)
+      require "custom.configs.dap"
       require("core.utils").load_mappings("dap")
     end
   },
   {
+    -- Publicly archive repo, lsp solution for lint and format
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
     end,
   },
+  -- Solution when null-ls is no longer available
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require "custom.configs.lint"
+  --   end
+  -- },
+  -- {
+  --   "mhartington/formatter.nvim",
+  --   event = "VeryLazy",
+  --   opts = function()
+  --     return require "custom.configs.formatter"
+  --   end
+  -- },
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -56,6 +73,10 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
+        "typescript-language-server",
+        "eslint-lsp",
+        "prettier",
+        "js-debug-adapter",
       }
     }
   },
