@@ -36,3 +36,15 @@ lspconfig.tsserver.setup {
   }
 }
 
+-- Install @angular/language-server and @angular/language-service globally
+local node_path = "/usr/lib/node_modules"
+local node_cmd = {"ngserver", "--stdio", "--tsProbeLocations", node_path , "--ngProbeLocations", node_path}
+lspconfig.angularls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = node_cmd,
+  on_new_config = function(new_config, new_root_dir)
+    new_config.cmd = node_cmd
+  end,
+}
+

@@ -72,6 +72,7 @@ local plugins = {
       ensure_installed = {
         "clangd",
         "clang-format",
+        "cpplint",
         "codelldb",
         "typescript-language-server",
         "eslint-lsp",
