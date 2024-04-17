@@ -21,7 +21,6 @@ local options = {
       horizontal = {
         prompt_position = "top",
         preview_width = 0.55,
-        results_width = 0.8,
       },
       vertical = {
         mirror = false,
@@ -50,14 +49,6 @@ local options = {
   },
 
   extensions_list = { "themes", "terms" },
-  extensions = {
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true,
-      case_mode = "smart_case",
-    },
-  },
 }
 
 return options
