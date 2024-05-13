@@ -71,6 +71,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "pyright",
+        "mypy",
+        "ruff",
+        "black",
         "clangd",
         "clang-format",
         "cpplint",
